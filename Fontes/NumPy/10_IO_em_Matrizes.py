@@ -7,12 +7,17 @@ m = np.empty((0,nc), dtype=int) # criou uma matriz vazia 0x0
 
 print()
 for i in range(nl):
-    linha = []
+    # cria o array 'linha' vazio
+    linha = np.array([], dtype=int)
+
     print(f"{i+1}a. linha")
     for j in range(nc):
         item = int(input(f"m[{i}, {j}] = "))
-        linha.append(item)
+        # adiciona o 'item' ao array 'linha'
+        linha = np.append(linha, item)       
     print("----------------------------")
+    
+    # adiciona a i-ésima linha a matriz 'm'
     m = np.append(m, [linha], axis=0)
 
 print()
@@ -27,4 +32,3 @@ for i in range(nl):
             print(", ", end="")
         smLinha += m[i, j]
     print(f" | soma = {smLinha}")
-
